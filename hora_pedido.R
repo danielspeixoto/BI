@@ -11,8 +11,9 @@ data = app %>%
     amount = n()
   )
 
-print(substr(app$HORA_PEDIDO[2],2, 3))
+print(data)
 
 viz = ggplot(data, aes(x=time, y=amount)) +
+  geom_point() + 
   geom_line()
 plot(viz)
