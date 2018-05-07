@@ -1,8 +1,3 @@
-# TODO: Add comment
-# 
-# Author: Usuario
-###############################################################################
-
 library(dplyr)
 library(ggplot2)
 library(scales)
@@ -15,12 +10,6 @@ usuario = app %>%
 				amount = n()
 		)
 
-ggplot(usuario, aes(x="", y=amount)) +
-		geom_line() +
-		coord_polar("y", start=0)
-
-#viz = ggplot(usuario, aes(x=date, y=amount)) +
-#		geom_line() +
-#		scale_x_date(labels = date_format("%Y-%m"))
-
+viz = ggplot(usuario, aes(x=usuario, y=amount)) +
+		geom_line()
 plot(viz)
