@@ -2,7 +2,7 @@ library(dplyr)
 library(ggplot2)
 library(scales)
 
-app <- read.csv("aplicativo.csv", header=TRUE, sep=",")
+app <- read.csv("trunk/aplicativo.csv", header=TRUE, sep=",")
 
 # Tipos de dispositivos
 dispositivos = app %>%
@@ -10,6 +10,7 @@ dispositivos = app %>%
 		summarise(
 				amount = n()
 		)
+print(dispositivos)
 
 pie_disp = ggplot(dispositivos, aes(x="", y=amount, fill=PRIMEIRO_PEDIDO)) +
 		geom_bar(width = 1, stat = "identity") +
