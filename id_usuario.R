@@ -12,7 +12,6 @@ usuario = app %>%
 print(usuario)
 
 viz = ggplot(usuario, aes(x=ID_USUARIO, y=amount)) +
-		geom_point() +
-    scale_color_continuous()
+		geom_point()
     
 plot(viz)
