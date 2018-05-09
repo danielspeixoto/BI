@@ -2,15 +2,15 @@ library(dplyr)
 library(ggplot2)
 library(scales)
 
-app <- read.csv("BI-master/aplicativo.csv", header=TRUE, sep=",")
+app <- read.csv("aplicativo.csv", header=TRUE, sep=",")
 
 usuario = app %>%
-  group_by(TOTAL_PEDIDO) %>%
+  group_by(ID_ESTABELECIMENTO) %>%
   summarise(
     amount = n()
   )
 
-viz = ggplot(usuario, aes(x=TOTAL_PEDIDO, y=amount)) +
+viz = ggplot(usuario, aes(x=ID_ESTABELECIMENTO, y=amount)) +
   geom_line() + geom_point()
 
 plot(viz)
